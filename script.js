@@ -3,6 +3,17 @@ var body = document.getElementsByTagName('body')[0];
 
 var i = 0;
 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    console.log(color);
+    return color;
+}
+
 while (i<63) {
 	var square = document.createElement("div");
 
@@ -11,12 +22,7 @@ while (i<63) {
 		square.style.paddingBottom = "11.11%";
 		square.style.float = "left";
 		square.style.display = "inline-block";
-
-		if (i % 2 === 0){
-			square.style.backgroundColor = "black";
-		} else {
-			square.style.backgroundColor = "red";
-		}
+		square.style.background = getRandomColor();
 	document.body.appendChild(square);
 	i++;
 
